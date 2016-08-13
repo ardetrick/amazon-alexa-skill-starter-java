@@ -1,0 +1,4 @@
+HelloWorldIntent hello {Name}
+HelloWorldIntent hi {Name}
+HelloWorldIntent hello
+HelloWorldIntent hi
