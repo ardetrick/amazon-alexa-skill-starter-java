@@ -10,14 +10,6 @@ compileJava {
     sourceCompatibility = JavaVersion.VERSION_1_8
 }
 
-jar {
-    manifest {
-        attributes 'Main-Class': 'Launcher',
-                'Implementation-Title': 'Gradle Quickstart',
-                'Implementation-Version': version
-    }
-}
-
 repositories {
     jcenter()
     mavenCentral()
