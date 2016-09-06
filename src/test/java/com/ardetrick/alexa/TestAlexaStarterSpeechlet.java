@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class TestNiceRideSpeechlet {
+public class TestAlexaStarterSpeechlet {
 
     @Test
     public void sampleTest() throws SpeechletException {
