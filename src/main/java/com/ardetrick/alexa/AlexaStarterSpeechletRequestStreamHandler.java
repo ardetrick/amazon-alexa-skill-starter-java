@@ -1,10 +1,10 @@
 package com.ardetrick.alexa;
 
-import com.amazon.speech.speechlet.lambda.SpeechletRequestStreamHandler;
-import com.google.inject.Guice;
-
-import java.util.HashSet;
 import java.util.Set;
+
+import com.amazon.speech.speechlet.lambda.SpeechletRequestStreamHandler;
+import com.google.common.collect.ImmutableSet;
+import com.google.inject.Guice;
 
 /**
  * This class could be the handler for an AWS Lambda function powering an Alexa Skills Kit
@@ -14,18 +14,12 @@ import java.util.Set;
  * the resulting zip file to power your function.
  */
 public final class AlexaStarterSpeechletRequestStreamHandler extends SpeechletRequestStreamHandler {
-
-    private static final Set<String> supportedApplicationIds;
-
-    static {
-        /*
-         * This Id can be found on https://developer.amazon.com/edw/home.html#/ "Edit" the relevant
-         * Alexa Skill and put the relevant Application Ids in this Set.
-         */
-        supportedApplicationIds = new HashSet<>();
-        // replace this with your own ID
-        supportedApplicationIds.add("amzn1.ask.skill.123abc-123abc-123abc-123abc-123abc");
-    }
+  /*
+   * This Id can be found on https://developer.amazon.com/edw/home.html#/ "Edit" the relevant
+   * Alexa Skill and put the relevant Application Ids in this Set.
+   * Replace this with your own ID
+   */
+    private static final Set<String> supportedApplicationIds = ImmutableSet.of("amzn1.ask.skill.123abc-123abc-123abc-123abc-123abc");
 
     public AlexaStarterSpeechletRequestStreamHandler() {
         super(Guice.createInjector(new AlexaStarterApplicationModule()).getInstance(AlexaStarterSpeechlet.class),

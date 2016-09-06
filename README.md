@@ -8,7 +8,7 @@ The application is to be deployed as an Amazon Web Services (AWS) Lambda Functio
 
 The application is built using Gradle. Use the gradle wrapper to run the build command.
 
-    `./gradlew build`
+    ./gradlew build
 
 The deployment artifact is built as a 'fat jar' and placed in `./build/distributions` as a zip file. Use this file when deploying to an AWS Lambda.
 
