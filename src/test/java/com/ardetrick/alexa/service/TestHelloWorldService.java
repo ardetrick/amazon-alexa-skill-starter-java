@@ -9,8 +9,8 @@ public class TestHelloWorldService {
     @Test
     public void sampleTest() {
         HelloWorldService helloWorldService = new HelloWorldServiceImpl();
-        final String hellToResponse = helloWorldService.helloTo("Alexa");
-        assertEquals(hellToResponse, "Hello, Alexa");
+        final String helloToResponse = helloWorldService.helloTo("World");
+        assertEquals("Well hello, World. Welcome to Alexa development!", helloToResponse);
     }
 
 }

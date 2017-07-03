@@ -16,11 +16,7 @@ public class HelloWorldIntentAction implements IntentAction {
 
     private static final String SLOT_NAME = "Name";
 
-    private HelloWorldService helloWorldService;
-
-    protected HelloWorldIntentAction() {
-
-    }
+    private final HelloWorldService helloWorldService;
 
     @Inject
     protected HelloWorldIntentAction(HelloWorldService helloWorldService) {
@@ -31,7 +27,7 @@ public class HelloWorldIntentAction implements IntentAction {
     public SpeechletResponse perform(final Intent intent,final Session session) {
         return Optional.ofNullable(intent.getSlot(SLOT_NAME))
                 .map(Slot::getValue)
-                .map(name -> getHelloResponse(name))
+                .map(this::getHelloResponse)
                 .orElse(getRepromptResposne());
     }
 
@@ -39,8 +35,7 @@ public class HelloWorldIntentAction implements IntentAction {
      * Returns a SpeechletResponse which reprompts the user to try again.
      */
     private SpeechletResponse getRepromptResposne() {
-
-        final String responseText = "I am sorry, who are you? Try saying 'hello, Alexa'";
+        final String responseText = "I am sorry, who are you? Try saying 'hello, World'";
 
         StandardCard standardCard = new StandardCard();
         standardCard.setTitle("Who are you?");

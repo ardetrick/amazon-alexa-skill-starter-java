@@ -18,7 +18,7 @@ public class AmazonHelpIntentAction implements IntentAction {
 
     @Override
     public SpeechletResponse perform(Intent intent, Session session) {
-        String speechText = "Provide help about how to use the skill.";
+        String speechText = "Here is where you can provide hints to users on how to use your skill.";
 
         SimpleCard card = new SimpleCard();
         card.setTitle("Help");

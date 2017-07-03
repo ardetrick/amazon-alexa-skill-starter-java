@@ -8,6 +8,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.inject.Guice;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TestAlexaStarterSpeechlet {
@@ -42,7 +43,7 @@ public class TestAlexaStarterSpeechlet {
         SpeechletResponse speechletResponse = alexaStarterSpeechlet.onIntent(request, session);
         String text = ((PlainTextOutputSpeech) speechletResponse.getOutputSpeech()).getText();
 
-        assertTrue(text.equals("Hello, Alexa"));
+        assertEquals("Well hello, Alexa. Welcome to Alexa development!", text);
     }
 
 }

@@ -1,17 +1,17 @@
 package com.ardetrick.alexa.service;
 
 /*
- * A simple implementation of the HelloWOrldService interface.
+ * A simple implementation of the HelloWorldService interface.
  */
 public class HelloWorldServiceImpl implements HelloWorldService {
 
-    protected HelloWorldServiceImpl() {
+    HelloWorldServiceImpl() {
 
     }
 
     @Override
     public String helloTo(final String name) {
-        return "Hello, " + name;
+        return "Well hello, " + name + ". Welcome to Alexa development!";
     }
 
 }

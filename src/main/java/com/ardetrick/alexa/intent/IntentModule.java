@@ -13,8 +13,7 @@ public class IntentModule extends AbstractModule {
     protected void configure() {
         bind(IntentHandlerService.class).to(IntentHandlerServiceImpl.class);
 
-        MapBinder<String, IntentAction> mapBinder =
-                MapBinder.newMapBinder(binder(), String.class, IntentAction.class);
+        MapBinder<String, IntentAction> mapBinder = MapBinder.newMapBinder(binder(), String.class, IntentAction.class);
 
         // Amazon intents
         mapBinder.addBinding("AMAZON.HelpIntent").to(AmazonHelpIntentAction.class);
